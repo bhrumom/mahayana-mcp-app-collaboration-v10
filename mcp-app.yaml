@@ -1,6 +1,6 @@
 schemaVersion: 3
 pluginId: io.mahayana.test.github-native-collaboration
-version: 1.0.0
+version: 1.0.1
 source:
   provider: github
   defaultBranch: main

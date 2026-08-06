@@ -35,3 +35,10 @@ func TestMCPResponseHasTextAndStructuredContent(t *testing.T) {
         t.Fatalf("missing result representations: %#v", result)
     }
 }
+
+func TestSendRejectsWhitespaceOnly(t *testing.T) {
+    runtime := NewRuntime()
+    if _, err := runtime.Call("send", map[string]any{"text": "   \t\n"}); err == nil || err.Error() != "invalid_input" {
+        t.Fatalf("expected invalid_input for whitespace-only text, got %v", err)
+    }
+}
