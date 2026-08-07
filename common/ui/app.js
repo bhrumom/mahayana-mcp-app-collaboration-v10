@@ -18,7 +18,7 @@ window.addEventListener('message', (event) => {
 });
 
 await request('ui/initialize', {
-  appInfo: { name: 'io.mahayana.test.github-native-collaboration', version: '1.0.0' },
+  appInfo: { name: 'io.mahayana.test.github-native-collaboration', version: '1.0.1' },
   appCapabilities: {},
 });
 window.parent.postMessage({ jsonrpc: '2.0', method: 'ui/notifications/initialized' }, '*');

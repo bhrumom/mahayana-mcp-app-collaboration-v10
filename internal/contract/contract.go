@@ -5,12 +5,13 @@ import (
     "errors"
     "fmt"
     "sort"
+    "strings"
     "sync"
 )
 
 var (
     PluginID = "io.mahayana.test.github-native-collaboration"
-    Version = "1.0.0"
+    Version = "1.0.1"
 )
 
 type Request struct {
@@ -59,7 +60,7 @@ func (r *Runtime) Call(name string, arguments map[string]any) (map[string]any, e
     switch name {
     case "send":
         text, _ := arguments["text"].(string)
-        if text == "" {
+        if strings.TrimSpace(text) == "" {
             return nil, errors.New("invalid_input")
         }
         r.next++
