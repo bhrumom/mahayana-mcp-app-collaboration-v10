@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Create user-confirmed Draft Pull Request
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         env:
           PR_HEAD: ${{ inputs.head }}
           ISSUE_NUMBER: ${{ inputs.issue_number }}
