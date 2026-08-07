@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "pluginId": "io.mahayana.test.github-native-collaboration",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "tools": ["send", "status", "cancel", "logs"],
   "result": {
     "required": ["content", "structuredContent"],
