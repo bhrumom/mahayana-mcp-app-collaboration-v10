@@ -88,7 +88,7 @@ jobs:
       - name: Sign the parent Release Manifest with GitHub OIDC
         run: cosign sign-blob --yes --bundle dist/release-manifest.sigstore.json dist/release-manifest.json
       - name: Attest all release artifacts
-        uses: actions/attest-build-provenance@v2
+        uses: actions/attest-build-provenance@v3
         with:
           subject-path: |
             dist/common.tar.gz
@@ -99,7 +99,7 @@ jobs:
             dist/native-linux-arm64.tar.gz
             dist/web-wasm.tar.gz
       - name: Attest the signed parent Release Manifest
-        uses: actions/attest-build-provenance@v2
+        uses: actions/attest-build-provenance@v3
         with:
           subject-path: dist/release-manifest.json
       - name: Publish immutable assets to the protected tag release
