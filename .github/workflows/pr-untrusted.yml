@@ -16,7 +16,7 @@ jobs:
     timeout-minutes: 15
     steps:
       - name: Checkout untrusted merge commit without credentials
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           persist-credentials: false
       - name: Use Go 1.24
@@ -49,7 +49,7 @@ jobs:
     timeout-minutes: 5
     steps:
       - name: Checkout without persisted credentials
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           persist-credentials: false
       - name: Prove no secret or OIDC publishing identity is available
